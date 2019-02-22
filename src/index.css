@@ -1,0 +1,160 @@
+@charset "utf-8";
+body {
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	direction: none;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100%;
+	font-family: "arial";
+	vertical-align: baseline;
+	-webkit-user-select: none;
+ 		-moz-user-select: none;
+ 		 -ms-user-select: none;
+	     user-select: none;
+	-mo-user-select: none;
+	-webkit-tap-highlight-color:transparent;
+	-webkit-touch-callout: none;
+	-webkit-text-size-adjust: none;
+	-webkit-user-select: none;
+	-webkit-highlight: none;
+	-webkit-tap-highlight-color:rgba(255,255,255,0);
+	line-height: 100%;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption,
+th,
+td {
+	text-align: left;
+	font-weight: normal;
+}
+
+img,
+a img {
+	border: none;
+	vertical-align: bottom;
+}
+
+a {
+	text-decoration: none;
+	color: #1a1a1a;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+input,
+textarea,
+select,
+button {
+	font-size: 100%;
+	font-family: inherit;
+}
+
+select {
+	margin: inherit;
+}
+
+.hidden,
+.dis_none {
+	display: none ;
+}
+html,body{
+    margin:0;
+    padding:0;
+ 	width: 100% !important;
+ 	overflow-x: hidden !important;
+ 	-webkit-tap-highlight-color:transparent;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	 -ms-user-select: none;
+	     user-select: none;
+}
+/*文字*/
+.blackWord{
+	line-height: 57px;
+	color: #242323;
+	font-size: 48px;
+}
+.garyWord{
+	float: left;
+	line-height: 42px;
+	color: #AFBECF;
+	font-size: 36px;
+}
