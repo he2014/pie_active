@@ -5,7 +5,7 @@
     background-color: rgba(0, 0, 0, 0);
 }
 .am-modal-mask{
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.85);
 }
 .Modal{
     overflow: hidden;

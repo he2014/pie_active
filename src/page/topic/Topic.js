@@ -84,7 +84,7 @@ class Topic extends Component {
     }
     lisLening = () => {
 
-        if (ReactDOM.findDOMNode(this.ptr).scrollTop > 100) {
+        if (ReactDOM.findDOMNode(this.ptr).scrollTop > 100|| ReactDOM.findDOMNode(this.ptrs).scrollTop > 100) {
             this.setState({
                 down: false
             });
