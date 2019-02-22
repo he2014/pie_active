@@ -31,3 +31,9 @@
     transform: rotate(360deg);
   }
 }
+.am-pull-to-refresh, .am-pull-to-refresh-down{
+  -webkit-overflow-scrolling: touch;
+}
+/* .am-modal-wrap{
+overflow: hidden;
+} */

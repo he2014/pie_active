@@ -2,16 +2,7 @@ import React, { Component } from 'react';
 import { Carousel, Modal } from 'antd-mobile';
 import "./carousel.css"
 import PropTypes from 'prop-types'
-function closest(el, selector) {
-    const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
-    while (el) {
-        if (matchesSelector.call(el, selector)) {
-            return el;
-        }
-        el = el.parentElement;
-    }
-    return null;
-}
+import ReactDOM from "react-dom"
 
 class Carousels extends Component {
     static propTypes = {
@@ -24,15 +15,13 @@ class Carousels extends Component {
         modal: false,
     }
 
-    onWrapTouchStart = (e) => {
-        // fix touch to scroll background page on iOS
-        if (!/iPhone|iPod|iPad/i.test(navigator.userAgent)) {
-            return;
-        }
-        const pNode = closest(e.target, '.am-modal-content');
-        if (!pNode) {
-            e.preventDefault();
-        }
+    componentDidMount(){
+        ReactDOM.findDOMNode(this.mods).addEventListener('touchmove', e=>{
+            e.preventDefault()
+        }, { passive: false })
+    }
+    componentWillUnmount(){
+        ReactDOM.findDOMNode(this.mods).removeEventListener('touchstart')
     }
     render() {
         return (
@@ -44,8 +33,8 @@ class Carousels extends Component {
                     maskClosable
                     onClose={this.props.onClose}
                     title=""
-                    wrapClassName="Modal"
-                    wrapProps={{ onTouchStart: this.onWrapTouchStart }}
+                    ref={el=>this.mods=el}
+                    wrapClassName="Modal"                  
                     afterClose={() => { }}
                 >
                     <Carousel

@@ -12,7 +12,7 @@ const List = asyncComponent(() => import("./List"))
 function genData() {
     const dataArr = [];
     for (let i = 0; i < 100; i++) {
-        if (i % 10 == 0) {
+        if (i % 10 === 0) {
             dataArr.push({
                 name: "Vincent",
                 head: "",
@@ -21,7 +21,7 @@ function genData() {
                 imgList: [require('../../image/imgDefalt.png'), require('../../image/imgDefalt.png'), require('../../image/imgDefalt.png')]
             });
         } else {
-            if (i % 3 == 0) {
+            if (i % 3 === 0) {
                 dataArr.push({
                     name: "Vincent",
                     head: "",
@@ -30,7 +30,7 @@ function genData() {
                     imgList: [require('../../image/5.jpg')]
                 });
             } else {
-                if (i % 7 == 0) {
+                if (i % 7 ===0) {
                     dataArr.push({
                         name: "Vincent",
                         head: "",
@@ -79,7 +79,8 @@ class Topic extends Component {
         }), 0);
         //redux 存 token
         this.props.loginAction({ key: util.queryString(this.props.location.search, "token") });
-        ReactDOM.findDOMNode(this.ptr).addEventListener("scroll", this.lisLening)
+        ReactDOM.findDOMNode(this.ptr).addEventListener("scroll", this.lisLening);
+        ReactDOM.findDOMNode(this.ptrs).addEventListener("scroll", this.lisLening)
     }
     lisLening = () => {
 
@@ -135,6 +136,7 @@ class Topic extends Component {
     // closeBar = () => {
     //     util.Bridge("closeBar", "", "")
     // }
+
     render() {
         const tabs = [
             { title: 'new' },
@@ -168,20 +170,21 @@ class Topic extends Component {
                                 style={{
                                     width: "100%",
                                     overflow: 'auto',
-                                    height: "100%"
+                                    height: "100%",
+                                  
                                 }}
                                 indicator={this.state.down ? {} : { deactivate: '' }}
                                 direction={this.state.down ? 'down' : 'up'}
                                 refreshing={this.state.refreshing}
                                 onRefresh={this.onRefreshNew}
                             >
-                                <List data={this.state.dataNew}></List>
+                                <List  data={this.state.dataNew}></List>
                             </PullToRefresh>
                         </div>
                         <div className="tab_item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', }}>
                             <PullToRefresh
                                 damping={60}
-                                ref={el => this.ptr = el}
+                                ref={el => this.ptrs = el}
                                 style={{
                                     width: "100%",
                                     overflow: 'auto',
@@ -202,7 +205,8 @@ class Topic extends Component {
         );
     }
     componentWillUnmount() {
-        ReactDOM.findDOMNode(this.ptr).removeEventListener("scroll", function () { })
+        ReactDOM.findDOMNode(this.ptr).removeEventListener("scroll");
+        ReactDOM.findDOMNode(this.ptrs).removeEventListener("scroll");
     }
 
 }

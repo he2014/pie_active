@@ -7,3 +7,7 @@
 .am-modal-mask{
     background-color: rgba(0, 0, 0, 0.6);
 }
+.Modal{
+    overflow: hidden;
+    z-index: 9999;
+    }

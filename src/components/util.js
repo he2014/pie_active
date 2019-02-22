@@ -1,7 +1,7 @@
 export default {
     queryString(location, key) {
         let result = location.match(new RegExp("[\?\&]" + key + "=([^\&]+)", "i"));
-        if (result == null || result.length < 1)
+        if (result === null || result.length < 1)
             return "";
         return result[1];
     },

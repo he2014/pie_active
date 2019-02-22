@@ -33,12 +33,14 @@ class List extends Component {
         })
     }
     setImageList = (e) => {
+        // this.props.preventDefault();
         this.setState({
             imgList: JSON.parse(e.target.dataset.obj),
             modal: true,
             index: Number(e.target.dataset.index)
         })
-
+    
+        
     }
     render() {
         const renderImageList = (data) => {
@@ -46,7 +48,7 @@ class List extends Component {
             // let list = null;
             if (data.length > 1) {
                 return data.map((item, index) => (
-                    <div className="images_item"><img data-index={index} onClick={this.setImageList} data-obj={JSON.stringify(data)} src={item} key={index} onError={this.imagesDefault} alt="" /></div>
+                    <div key={index} className="images_item"><img data-index={index} onClick={this.setImageList} data-obj={JSON.stringify(data)} src={item} key={index} onError={this.imagesDefault} alt="" /></div>
                 ))
             } else {
                 return <img data-index={this.state.defaultindex} onClick={this.setImageList} data-obj={JSON.stringify(data)} style={{ "maxWidth": "100%" }} src={data[0]} alt="" />
