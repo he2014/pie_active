@@ -120,21 +120,21 @@ class Topic extends Component {
     //      userCenter   // profile页
     //     openBar  //
     //    closeBar
-    loadingOpen = () => {
-        util.Bridge("loadingOpen", "", "")
-    }
-    loadingClose = () => {
-        util.Bridge("loadingClose", "", "")
-    }
-    userCenter = () => {
-        util.Bridge("userCenter", { userId: "98982" }, "")
-    }
-    openBar = () => {
-        util.Bridge("openBar", "", "")
-    }
-    closeBar = () => {
-        util.Bridge("closeBar", "", "")
-    }
+    // loadingOpen = () => {
+    //     util.Bridge("loadingOpen", "", "")
+    // }
+    // loadingClose = () => {
+    //     util.Bridge("loadingClose", "", "")
+    // }
+    // userCenter = () => {
+    //     util.Bridge("userCenter", { userId: "98982" }, "")
+    // }
+    // openBar = () => {
+    //     util.Bridge("openBar", "", "")
+    // }
+    // closeBar = () => {
+    //     util.Bridge("closeBar", "", "")
+    // }
     render() {
         const tabs = [
             { title: 'new' },
@@ -143,11 +143,11 @@ class Topic extends Component {
         return (
             <div className="topic_container">
                 <div className="topic_container_header" >
-                    <Button onClick={this.loadingOpen}>openLoading</Button>
+                    {/* <Button onClick={this.loadingOpen}>openLoading</Button>
                     <Button onClick={this.loadingClose}>closeLoading</Button>
                     <Button onClick={this.openBar}>openBar</Button>
                     <Button onClick={this.closeBar}>closeBar</Button>
-                    <Button onClick={this.userCenter}>profile页</Button>
+                    <Button onClick={this.userCenter}>profile页</Button> */}
                 </div>
                 <img style={{ marginTop: "170px", width: "100%", height: "258px" }} src={require("../../image/3.jpg")} alt="" />
                 <div className="topic_container_context">
