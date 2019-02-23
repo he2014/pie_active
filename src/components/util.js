@@ -7,9 +7,9 @@ export default {
      * @param {*} url upload url
      * @param {*} filename  input name
      * @param {*} callback upload success  callback
+     * @param {*} number compress 质量  0-1 默认 0.7
      */
-    imageCompressUpload(ele,url,filename,callback){
-
+    imageCompressUpload(ele,url,filename,callback,number){
         document.querySelector(ele).onchange = function(e){
             let xhr = form = image = reand =null;
              let  file  = e.target.files[0];
@@ -24,6 +24,7 @@ export default {
                  //保持图片宽高为画布宽高
                  let width = this.width;
                  let height = this.height;
+                 let num = number|| 0.7;
                  canv =  document.createElement("canvas");
                  canv.height = height;
                  canv.width = width;
@@ -34,7 +35,7 @@ export default {
                  // 图片压缩
                   context.drawImage(image, 0, 0, width, height);
                   //转base64 质量压缩
-                  let dataUrl = canv.toDataURL(file.type,0.7);
+                  let dataUrl = canv.toDataURL(file.type,num);
                   //将base64转换为文件
             let fileData = function dataURLtoFile(dataurl) {
              let  u8arr = null,
