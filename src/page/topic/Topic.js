@@ -7,6 +7,7 @@ import ReactDOM from "react-dom"
 import { connect } from 'react-redux'
 import { loginAction } from "../../store/login/"
 import "./topic.css"
+import Imgaeuploadcompress from "../../components/Imgaeuploadcompress"
 
 const List = asyncComponent(() => import("./List"))
 function genData() {
@@ -136,7 +137,9 @@ class Topic extends Component {
     // closeBar = () => {
     //     util.Bridge("closeBar", "", "")
     // }
+    imageCompress =()=>{
 
+    }
     render() {
         const tabs = [
             { title: 'new' },
@@ -145,6 +148,7 @@ class Topic extends Component {
         return (
             <div className="topic_container">
                 <div className="topic_container_header" >
+                    <Imgaeuploadcompress filename="file" imageCompress={this.imageCompress} url="http://manager-api.letspie.com/manager/upload?token=1_6d64e25fe27b41539ff4cd0f928082ab&_r=1550976701" number={0.7} txtBtn="upload" btnClassName="blueButton" ></Imgaeuploadcompress>
                     {/* <Button onClick={this.loadingOpen}>openLoading</Button>
                     <Button onClick={this.loadingClose}>closeLoading</Button>
                     <Button onClick={this.openBar}>openBar</Button>

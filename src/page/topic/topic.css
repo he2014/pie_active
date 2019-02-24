@@ -1,3 +1,14 @@
+
+.blueButton
+            {
+                width: 100px;
+                height: 40px;
+                background-color: #00b3ee;
+                color: #fff;
+                font:normal normal normal 16px/40px 'Microsoft YaHei';
+                border-radius: 4px;
+               
+            }
 .topic_container{
     position: absolute;
     top: 0;
